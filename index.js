@@ -11,10 +11,14 @@ let redirects = new Map(
 	fs.readFileSync(REDIRECTS_FILE).toString().split("\n")
 	.filter(l => l.trim() != "")
 	.map(l => l.split(/,(.*)/))
+	.concat([["", "/"]])
 );
 
 function doRedirect(req, res, code) {
-	res.redirect(redirects.get(code));
+	if(redirects.has(code))
+		res.redirect(redirects.get(code));
+	else
+		res.status(404).end("Not found");
 }
 
 app.get("/:code", (req, res) => {
