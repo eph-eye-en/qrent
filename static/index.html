@@ -3,12 +3,14 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>QRen't</title>
+	<link rel="stylesheet" href="index.css" />
 </head>
 <body>
-	<h1>QRen't</h1>
-	<form method="POST" action="/">
-		<input name="code" />
-		<input type="submit" value="Go" />
+	<form id="code-form" method="POST" action="/">
+		<h1 id="title">QRen't</h1>
+		<p id="desc">Enter a code:</p>
+		<input id="code-input" name="code" placeholder="12345" /> <br />
+		<input id="submit-code" type="submit" value="Go" />
 	</form>
 </body>
 </html>

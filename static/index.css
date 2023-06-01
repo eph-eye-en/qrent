@@ -1,0 +1,37 @@
+* {
+	font-family: sans-serif;
+}
+
+body {
+	background: lightblue;
+	text-align: center;
+}
+
+#code-form {
+	width: 350px;
+	max-width: 100%;
+	padding: 10px;
+	display: inline-block;
+	text-align: left;
+}
+
+#title {
+	margin-top: 0;
+}
+
+#desc {
+	margin-bottom: 0;
+	margin-left: 3px;
+}
+
+#code-form input, input:focus-visible {
+	margin: 0;
+	margin-bottom: 5px;
+	padding: 5px;
+	border: none;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 20pt;
+}
