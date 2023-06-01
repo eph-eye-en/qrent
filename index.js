@@ -1,5 +1,6 @@
-const PORT = 3000;
-const REDIRECTS_FILE = "./redirects.csv";
+const dotenv = require("dotenv");
+dotenv.config();
+const { PORT=7073, REDIRECTS_FILE="./redirects.csv" } = process.env;
 
 const fs = require("fs");
 const express = require("express");
@@ -13,6 +14,7 @@ let redirects = new Map(
 	.map(l => l.split(/,(.*)/))
 	.concat([["", "/"]])
 );
+console.log("Read redirects from " + REDIRECTS_FILE);
 
 function doRedirect(req, res, code) {
 	if(redirects.has(code))
